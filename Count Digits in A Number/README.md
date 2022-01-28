@@ -8,18 +8,17 @@
   </ul>
 </div>
 
-<code>Constraints</code>
-<br>
+<h3>Constraints</h3>
 <code>1 <= n < 10^9</code>
 
-<h2>Format</h2>
+<h3>Format</h3>
 <pre>
 <strong>Input:</strong> "n" where n is any integer.
 
 <strong>Output:</strong> "d" where d is the number of digits in the number "n"
 </pre>
 
-<h2>Example</h2>
+<h3>Example</h3>
 <pre>
 <strong>Sample Input:</strong> 65784383
 
