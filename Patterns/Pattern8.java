@@ -27,5 +27,16 @@ public class Main {
             System.out.println();
         }
 
+        // METHOD 2 GAP METHOD
+
+        for(int i=1;i<=n;++i) {
+            for(int j=1;j<=n;++j) {
+                if(i+j==n+1)
+                    System.out.print("*\t");
+                else
+                    System.out.print("\t");
+            }
+            System.out.println();
+        }
     }
 }
