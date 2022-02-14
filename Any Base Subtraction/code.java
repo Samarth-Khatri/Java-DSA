@@ -17,7 +17,7 @@ import java.util.*;
        int borrow = 0;
        int power = 1;
 
-       while (n2>0) {
+       while (n2>0) { //n2>n1 is also correct condition
            int ld1 = n1%10;
            int ld2 = n2%10;
 
