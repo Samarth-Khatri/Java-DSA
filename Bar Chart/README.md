@@ -3,8 +3,8 @@
 <div>
   <ul>
     <li>You are given a number n, representing the size of array a.</li>
-2. You are given n numbers, representing elements of array a.</li>
-3. You are required to print a bar chart representing value of arr a.</li>
+    <li>You are given n numbers, representing elements of array a.</li>
+    <li>You are required to print a bar chart representing value of arr a.</li>
   </ul>
 </div>
 
