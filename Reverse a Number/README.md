@@ -1,7 +1,7 @@
-<h2>Count Digits in A Number</h2>
+<h1>Reverse a Number</h1>
 
 <div>
-  <ul> 
+  <ul>
     <li> You've to display the digits of a number in reverse.</li>
     <li>Take as input "n", the number for which digits have to be display in reverse.</li>
     <li>Print the digits of the number line-wise, but in reverse order.</li>
@@ -15,7 +15,7 @@
 <pre>
 <strong>Input:</strong> "n" where n is any integer.
 
-<strong>Output:</strong> 
+<strong>Output:</strong>
 d1
 d2
 d3
@@ -26,7 +26,7 @@ d3
 <pre>
 <strong>Sample Input:</strong> 65784383
 
-<strong>Sample Output:</strong> 
+<strong>Sample Output:</strong>
 3
 8
 3

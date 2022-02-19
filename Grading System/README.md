@@ -1,10 +1,10 @@
-<h2>Count Digits in A Number</h2>
+<h1>Grading System</h1>
 
 <div>
   <strong>You are given as input marks of a student.</strong>
   <strong>Display an appropriate message based on the following rules:<strong>
-  	  
-  <ul> 
+
+  <ul>
       <li> for marks above 90, print excellent.</li>
   	  <li> for marks above 80 and less than equal to 90, print good.</li>
   	  <li> for marks above 70 and less than equal to 80, print fair.</li>

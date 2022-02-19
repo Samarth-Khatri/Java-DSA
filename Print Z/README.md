@@ -1,7 +1,7 @@
-<h2>Count Digits in A Number</h2>
+<h1>Print Z</h1>
 
 <div>
-  <ul> 
+  <ul>
     <li>You are required to print a 'z' of size 5 using '*'.</li>
   </ul>
 </div>
@@ -13,7 +13,7 @@
 <pre>
 <strong>Input:</strong> No input
 
-<strong>Output:</strong> 
+<strong>Output:</strong>
 <p>*****</p>
 <p>   *</p>
 <p>  *</p>

@@ -1,7 +1,7 @@
-<h2>Count Digits in A Number</h2>
+<h1>Digit Frequency</h1>
 
 <div>
-  <ul> 
+  <ul>
     <li> You are given a number n.</li>
     <li>You are given a digit d.</li>
     <li>You are required to calculate the frequency of digit d in number n.</li>
@@ -21,10 +21,10 @@
 
 <h3>Example</h3>
 <pre>
-<strong>Sample Input:</strong> 
+<strong>Sample Input:</strong>
 994543234
 4
 
-<strong>Sample Output:</strong> 
+<strong>Sample Output:</strong>
 3
 </pre>

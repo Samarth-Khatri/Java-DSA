@@ -1,4 +1,4 @@
-<h2>Count Digits in A Number</h2>
+<h1>Find Element in an Array</h1>
 
 <div>
   <ul>

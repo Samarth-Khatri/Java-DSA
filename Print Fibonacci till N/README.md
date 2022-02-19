@@ -1,7 +1,7 @@
-<h2>Count Digits in A Number</h2>
+<h1>Print Fibonacci till N</h1>
 
 <div>
-  <ul> 
+  <ul>
     <li>You've to print first n fibonacci numbers.</li>
     <li>Take as input "n", the count of fibonacci numbers to print.</li>
     <li>Print first n fibonacci numbers.</li>
@@ -15,7 +15,7 @@
 <pre>
 <strong>Input:</strong> n
 
-<strong>Output:</strong> 
+<strong>Output:</strong>
 0
 1
 1
@@ -30,7 +30,7 @@
 <pre>
 <strong>Sample Input:</strong> 10
 
-<strong>Sample Output:</strong> 
+<strong>Sample Output:</strong>
 0
 1
 1

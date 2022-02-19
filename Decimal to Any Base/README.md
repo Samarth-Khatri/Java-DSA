@@ -1,7 +1,7 @@
-<h2>Count Digits in A Number</h2>
+<h1>Decimal to Any Base</h1>
 
 <div>
-  <ul> 
+  <ul>
     <li> You are given a number n.</li>
     <li>You are given a base b.</li>
     <li>You are required to convert the number n into its corresponding value in base b.</li>
@@ -21,9 +21,9 @@
 
 <h3>Example</h3>
 <pre>
-<strong>Sample Input:</strong> 
+<strong>Sample Input:</strong>
 57
 2
-<strong>Sample Output:</strong> 
+<strong>Sample Output:</strong>
 111001
 </pre>

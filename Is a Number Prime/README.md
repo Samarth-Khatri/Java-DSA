@@ -1,7 +1,7 @@
-<h2>Count Digits in A Number</h2>
+<h1>Is a Number Prime</h1>
 
 <div>
-  <ul> 
+  <ul>
     <li>You've to check whether a given number is prime or not.</li>
     <li>Take a number "t" as input representing count of input numbers to be tested.</li>
     <li>Take a number "n" as input "t" number of times.</li>
@@ -15,13 +15,13 @@
 
 <h3>Format</h3>
 <pre>
-<strong>Input:</strong> 
+<strong>Input:</strong>
 A number t
 A number n
 A number n
 .. t number of times
 <br>
-<strong>Output:</strong> 
+<strong>Output:</strong>
 prime
 not prime
 not prime
@@ -30,7 +30,7 @@ not prime
 
 <h3>Example</h3>
 <pre>
-<strong>Sample Input:</strong> 
+<strong>Sample Input:</strong>
 5
 13
 2
@@ -38,7 +38,7 @@ not prime
 4
 5
 <br>
-<strong>Sample Output:</strong> 
+<strong>Sample Output:</strong>
 prime
 prime
 prime
