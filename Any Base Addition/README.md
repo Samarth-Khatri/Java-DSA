@@ -1,17 +1,17 @@
-<h1>Any Base Multiplication</h1>
+<h1>Any Base Addition</h1>
 
 <div>
   <ul>
     <li>You are given a base b.</li>
-    <li>You are given two numbers n1 and n2 of base b.</li>
-    <li>You are required to multiply n1 and n2 and print the value.</li>
+</li>You are given two numbers n1 and n2 of base b.</li>
+</li>You are required to add the two numbes and print their value in base b.</li>
   </ul>
 </div>
 
 <h3>Constraints</h3>
 <code>2 <= b <= 10</code>
-<code>0 <= n1 <= 10000</code>
-<code>0 <= n2 <= 10000</code>
+<code>0 <= n1 <= 256</code>
+<code>0 <= n2 <= 256</code>
 
 <h3>Format</h3>
 <pre>
@@ -20,16 +20,16 @@ A base b
 A number n1
 A number n2
 <strong>Output:</strong>
-A number of base b equal in value to n2 * n1.
+A number representing the sum of n1 and n2 in base b.
 </pre>
 
 <h3>Example</h3>
 <pre>
 <strong>Sample Input:</strong>
-5
-1220
-31
+8
+777
+1
 <br>
 <strong>Sample Output:</strong>
-43320
+1000
 </pre>
