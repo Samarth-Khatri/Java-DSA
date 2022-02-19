@@ -1,4 +1,4 @@
-<h2>Count Digits in A Number</h2>
+<h1>Bar Chart</h1>
 
 <div>
   <ul>
