@@ -1,4 +1,4 @@
-<h2>Rotate an Array</h2>
+<h1>Rotate an Array</h1>
 
 <div>
   <ul>
