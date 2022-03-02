@@ -15,10 +15,15 @@
 
 <h3>Constraints</h3>
 <code>1 <= n1 <= 10^2 </code>
+
 <code>1 <= m1 <= 10^2 </code>
+
 <code>-10^9 <= e11, e12, .. n1 * m1 elements <= 10^9</code>
+
 <code>1 <= n2 <= 10^2 </code>
+
 <code>1 <= m2 <= 10^2 </code>
+
 <code>-10^9 <= e11', e12', .. n2 * m2 elements <= 10^9</code>
 
 <h3>Format</h3>
