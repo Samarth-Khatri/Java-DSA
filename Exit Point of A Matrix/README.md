@@ -13,7 +13,9 @@
 
 <h3>Constraints</h3>
 <code>1 <= n <= 10^2 </code>
+
 <code>1 <= m <= 10^2 </code>
+
 <code>-10^9 <= e1, e1, .. n * m elements <= 10^9</code>
 
 <h3>Format</h3>
