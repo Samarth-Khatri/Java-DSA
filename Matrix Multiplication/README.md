@@ -24,7 +24,8 @@
 <h3>Format</h3>
 <strong>Input:</strong>
 <pre>
-A number n1 A number m1 e11 e12.. e21 e22.. .. n1 * m1 number of elements of array a1 A number n2 A number m2 e11' e12'.. e21' e22'.. .. n2 * m2 number of elements of array a2
+A number n1 A number m1 e11 e12.. e21 e22.. .. n1 * m1 number of elements of array a1 
+A number n2 A number m2 e11' e12'.. e21' e22'.. .. n2 * m2 number of elements of array a2
 </pre>
 
 <strong>Output:</strong>
