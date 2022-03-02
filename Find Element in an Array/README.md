@@ -11,8 +11,7 @@
 
 <h3>Constraints</h3>
 <code>1 <= n <= 10^7</code>
-<code>-10^9 <= n1, n2 </code>
-<code>.. n elements <= 10^9</code>
+<code>-10^9 <= n1, n2, .. n elements <= 10^9</code>
 <code>-10^9 <= d <= 10^9</code>
 
 <h3>Format</h3>
