@@ -10,10 +10,7 @@
 
 <h3>Constraints</h3>
 <code>0 <= n < 10^7</code>
-<code>For more constraints check this
-https://www.pepcoding.com/resources/online-java-foundation/getting-started/inverse-of-a-number/ojquestion
-The only difference is the range of values is from 0 to n - 1, instead
-of 1 to n</code>
+
 
 <!-- <h3>Format</h3>
 <pre>
