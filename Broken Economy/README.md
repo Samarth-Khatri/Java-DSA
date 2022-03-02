@@ -1,4 +1,4 @@
-<h1>Subsets of Array</h1>
+<h1>Broken Economy</h1>
 <b>In a country of novice government, the economic system is changed where only coins are used that too of various denominations. Whenever a foreigner visits this country, they visit a money exchanger to get the currency of the same country. As the foreigner is unaware of the denomination of the country, the money exchange prefers to tell them the denomination which is the nearest maximum and nearest minimum to the denomination mentioned by the foreigner. In case they get the correct guess of the denomination, they are told the same denomination. The denominations are always quoted in ascending order.
 
 Example 1: In a country, 8 given denominations are as follows
