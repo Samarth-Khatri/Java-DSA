@@ -1,4 +1,4 @@
-<h1>Spiral Display</h1>
+<h1>Print All Palindromic Substrings</h1>
 
 <div>
   <ul>
