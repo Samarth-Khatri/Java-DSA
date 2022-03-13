@@ -2,7 +2,7 @@
 
 <div>
   <ul>
-    <li>ou are given a string that contains only lowercase and uppercase alphabets.</li> 
+    <li>You are given a string that contains only lowercase and uppercase alphabets.</li> 
 <li>You have to toggle the case of every character of the given string.</li>
   </ul>
 </div>
