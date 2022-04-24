@@ -1,5 +1,5 @@
 import java.io.*;
-	import java.util.*;
+import java.util.*;
 
 	public class Main {
 
@@ -19,7 +19,7 @@ import java.io.*;
 				return;
 			else if(sr==dr && sc==dc)
 				System.out.println(psf);
-	        printMazePaths(sr,sc+1,dr,dc,psf+"h");
+	    printMazePaths(sr,sc+1,dr,dc,psf+"h");
 			printMazePaths(sr+1,sc,dr,dc,psf+"v");
 	    }
 
