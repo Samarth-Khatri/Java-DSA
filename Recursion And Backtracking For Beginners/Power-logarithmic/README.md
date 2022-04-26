@@ -27,5 +27,5 @@ x raised to the power n
 2
 5
 
-###Sample Output
+### Sample Output
 32
