@@ -20,11 +20,11 @@ public class Main {
 		else if(sr==dr && sc==dc)
 			System.out.println(psf);
 
-        for(int i=1;i<=dc;i++)
+        for(int i=1;i<=dc-sc;i++)
             printMazePaths(sr,sc+i,dr,dc,psf+"h"+i);
-        for(int j=1;j<=dr;j++)
+        for(int j=1;j<=dr-sr;j++)
             printMazePaths(sr+j,sc,dr,dc,psf+"v"+j);
-        for(int k=1;k<=Math.min(dr,dc);k++)
+        for(int k=1;k<=Math.min(dr-sr,dc-sc);k++)
             printMazePaths(sr+k,sc+k,dr,dc,psf+"d"+k);
     }
 
