@@ -25,13 +25,13 @@ public class Main {
         if(sc<0 || sc>=maze[0].length || sr<0 || sr>=maze.length || maze[sr][sc]==1)
             return;
 
-        maze[sr][sc] = 1;
+        maze[sr][sc] = 1; // Make blockage to restrict prev moves
 
         floodfill(maze,sr-1,sc,asf+"t"); // Top
         floodfill(maze,sr,sc-1,asf+"l"); // Left
         floodfill(maze,sr+1,sc,asf+"d"); // Down
         floodfill(maze,sr,sc+1,asf+"r"); // Right
 
-        maze[sr][sc] = 0;
+        maze[sr][sc] = 0; // Remove blockage after backtracking
     }
 }
