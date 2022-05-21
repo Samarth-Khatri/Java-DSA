@@ -24,7 +24,7 @@ public class Main{
 
 
 
-// OPTIMIZED SOLUTION (Complexity nlog(logn))
+// OPTIMIZED SOLUTION (Complexity nlog(logn)) -> Sieve of Eratosthenes Algorithm
 
 import java.util.*;
 
