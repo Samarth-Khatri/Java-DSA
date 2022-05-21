@@ -1,4 +1,4 @@
-// BRUTE FORCE (Complexity n(rootn))
+// BRUTE FORCE -> Complexity O(n√n)
 
 import java.util.*;
 
@@ -24,7 +24,7 @@ public class Main{
 
 
 
-// OPTIMIZED SOLUTION (Complexity nlog(logn)) -> Sieve of Eratosthenes Algorithm
+// OPTIMIZED SOLUTION -> Sieve of Eratosthenes Algorithm -> Complexity O(N*loglog(N)) 
 
 import java.util.*;
 
