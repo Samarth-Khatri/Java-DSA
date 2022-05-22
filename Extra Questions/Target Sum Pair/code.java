@@ -10,11 +10,11 @@ public class Main {
       arr[i] = scn.nextInt();
     int target = scn.nextInt();
 
-    Arrays.sort(arr);
+    Arrays.sort(arr); // Complexity O(NlogN)
 
     int i=0;
     int j=arr.length-1;
-    while(i<j) {
+    while(i<j) { // Complexity O(N)
       if(arr[j]+arr[i]>target) 
         j--;
       else if(arr[j]+arr[i]<target)
