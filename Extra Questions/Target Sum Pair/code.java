@@ -14,6 +14,8 @@ public class Main {
 
     int i=0;
     int j=arr.length-1;
+
+    // We can also use Binary Search instead of this -> Complexity O(NlogN) 
     while(i<j) { // Complexity O(N)
       if(arr[j]+arr[i]>target) 
         j--;
