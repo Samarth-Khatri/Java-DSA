@@ -14,13 +14,15 @@ public class Main {
 
     int i=0;
     int j=arr.length-1;
-    while(arr[i]+arr[j]!=target) {
+    while(i<j) {
       if(arr[j]+arr[i]>target) 
         j--;
-      else
+      else if(arr[j]+arr[i]<target)
         i++;
+      else {
+        System.out.println(arr[i] + "," + arr[j]);
+        i++; j--;
+      }
     }
-    if(arr[i]+arr[j]==target)
-      System.out.println(arr[i] + "," + arr[j]);
   }
 }
