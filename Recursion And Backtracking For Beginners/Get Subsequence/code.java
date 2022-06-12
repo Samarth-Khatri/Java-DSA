@@ -10,6 +10,8 @@ public class Main {
         System.out.println(ans);
     }
 
+    // Time Complexity -> O(2^N)
+
     public static ArrayList<String> gss(String str) {
         // Base case
         if(str.length()==0) {

@@ -9,6 +9,8 @@ public class Main {
         printSS(str,"");
     }
 
+    // Time Complexity -> O(2^N) 
+
     public static void printSS(String str, String ans) {
         if(str.length()==0) {
             System.out.println(ans);

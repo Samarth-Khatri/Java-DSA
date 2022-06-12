@@ -11,6 +11,8 @@ public class Main {
         System.out.println(xpn);
     }
 
+    // Time Complexity -> O(N)
+
     public static int power(int x, int n){
         if(n==0)
             return 1;
