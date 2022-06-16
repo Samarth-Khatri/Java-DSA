@@ -9,13 +9,31 @@ public class Main {
     for(int i=0;i<n;++i)
       arr[i]=scn.nextInt();
     
+    
+    // Approach 1
     int m=0;
     for(int i=0;i<n;++i)
       if(arr[i]>0)
         arr[m++]=arr[i];
     for(int i=m;i<n;++i)
       arr[i]=0;
-    for(int i=0;i<n;++i)
-      System.out.println(arr[i]);
+
+
+    // Approach 2
+    int i=0, j=0;
+    while(i<n) {
+      if(arr[i]==0)
+        i++;
+      else 
+        swap(arr,i++,j++);
+    }
+    for(int k=0;k<n;++k)
+      System.out.println(arr[k]);
+  }
+
+  public static void swap(int[] arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
   }
 }
