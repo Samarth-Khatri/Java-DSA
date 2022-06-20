@@ -14,6 +14,8 @@ public class Main {
     // sc - source column
     // dr - destination row
     // dc - destination column
+
+    // Time Complexity -> Exponential of power ((r-1)+(c-1)+min(r-1,c-1))
     public static void printMazePaths(int sr, int sc, int dr, int dc, String psf) {
         if(sr>dr || sc>dc)
 			return;
