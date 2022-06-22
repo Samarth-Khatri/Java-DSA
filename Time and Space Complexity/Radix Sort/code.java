@@ -3,6 +3,7 @@ import java.util.*;
 
 public class Main {
 
+  // Time complexity -> O(N*d) -> d = digits in max number
   public static void radixSort(int[] arr) {
     int max=arr[0];
     for(int i=0;i<arr.length;++i)
