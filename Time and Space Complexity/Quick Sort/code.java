@@ -3,7 +3,8 @@ import java.util.*;
 
 public class Main {
 
-  // Time Complexity -> O(NlogN) -> Equation -> T(N) = KN + T(N/2) + T(N/2)
+  // Time Complexity -> Average Case -> O(NlogN) -> Equation -> T(N) = KN + T(N/2) + T(N/2)
+  // Time Complexity -> Worst Case -> O(N^2)
 
   public static void quickSort(int[] arr, int lo, int hi) {
     if(lo>hi) // base case
