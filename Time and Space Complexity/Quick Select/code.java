@@ -3,6 +3,8 @@ import java.util.*;
 
 public class Main {
 
+  // Time Complexity -> O(N) -> Equation -> T(N) = KN + T(N/2) 
+
   public static int quickSelect(int[] arr, int lo, int hi, int k) {
     int pivot = arr[hi];
     int pidx = partition(arr,pivot,lo,hi);
