@@ -253,6 +253,7 @@ public class Main {
 
       return ml;
     }
+    
     public static Node midNode(Node head, Node tail) {
       Node fast = head, slow = head;
       while(fast!=tail && fast.next!=tail) {
