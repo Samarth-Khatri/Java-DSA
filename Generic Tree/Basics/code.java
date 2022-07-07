@@ -24,6 +24,26 @@ public class Main {
         System.out.println(".");
     }
 
+    public static void levelOrderLine(Node root) { // Display Tree -> Level & Order Linewise
+        Queue<Node> queue = new ArrayDeque<>();
+        Queue<Node> cqueue = new ArrayDeque<>();
+        queue.add(root);
+
+        while(queue.size()>0) {
+            // remove -> print -> Add children to child queue
+            Node temp = queue.remove();
+            System.out.print(temp.data + " ");
+            for(Node child : temp.children)
+                cqueue.add(child);
+            
+            if(queue.size()==0) { // if queue is empty assign cqueue to queue and make cqueue empty
+                queue = cqueue;
+                cqueue = new ArrayDeque<>();
+                System.out.println(".");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Node root = new Node(10); // Root Node
 
@@ -60,6 +80,8 @@ public class Main {
         Node onetwenty = new Node(120);
         eighty.children.add(onetwenty);
 
-        levelOrder(root); // Display Tree
+        levelOrder(root); // Display Tree -> 10 20 30 40 50 60 70 80 90 100 110 120 .
+
+        levelOrderLine(root); // Display Tree -> Diff levels in diff lines
     }
 }
