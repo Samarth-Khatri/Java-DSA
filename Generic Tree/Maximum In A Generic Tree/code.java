@@ -55,6 +55,7 @@ public class Main {
     return s;
   }
 
+  // Max in Tree
   public static int max(Node node) {
     int max=node.data;
     for(Node child : node.children) {
@@ -63,6 +64,17 @@ public class Main {
     }
 
     return max;
+  }
+
+  // Min in Tree
+  public static int min(Node node) {
+    int min=node.data;
+    for(Node child : node.children) {
+        int minChild = min(child);
+        min = Math.min(minChild,min);
+    }
+
+    return min;
   }
 
   public static void main(String[] args) throws Exception {
