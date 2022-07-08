@@ -49,9 +49,18 @@ public class Main {
         return stack.pop(); // Last Node in Stack is Root Node
     }
 
+    public static void serialize(Node root, ArrayList<Integer> data) {
+        // To convert tree into arraylist
+    }
+
     public static void main(String[] args) {
         int []arr = {10,20,50,-1,60,-1,-1,30,70,-1,80,110,-1,120,-1,-1,90,-1,-1,40,100,-1,-1,-1}; // Given Array
         Node root = construct(arr); // Construct Tree from given Array
+
+        ArrayList<Integer> list = new ArrayList<>();
+        serialize(root,list); // Serialize Tree to ArrayList
+        System.out.println(list);
+
         levelOrderLine(root); // Display Tree
     }
 }
