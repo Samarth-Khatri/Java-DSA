@@ -44,6 +44,26 @@ public class Main {
         }
     }
 
+    public static void levelOrderLineReverse(Node root) { // Display Tree -> Level & Order Zig Zag
+        Stack<Node> stack = new Stack<Node>();
+        Stack<Node> cstack = new Stack<Node>();
+        stack.push(root);
+
+        while(stack.size()>0) {
+            // remove -> print -> Add children to child stack
+            Node temp = stack.pop();
+            System.out.print(temp.data + " ");
+            for(Node child : temp.children)
+                cstack.push(child);
+            
+            if(stack.size()==0) { // if stack is empty assign cstack to stack and make cstack empty
+                stack = cstack;
+                cstack = new Stack<>();
+                System.out.println(".");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Node root = new Node(10); // Root Node
 
@@ -83,5 +103,7 @@ public class Main {
         levelOrder(root); // Display Tree -> 10 20 30 40 50 60 70 80 90 100 110 120 .
 
         levelOrderLine(root); // Display Tree -> Diff levels in diff lines
+
+        levelOrderLineReverse(root); // Display Tree -> Diff levels in diff lines zigzag order
     }
 }
