@@ -51,10 +51,10 @@ public class Main {
 
     // To convert tree into arraylist
     public static void serialize(Node node, ArrayList<Integer> list) {
-        list.add(node.data);
+        list.add(node.data); // pre area
         for(Node child : node.children) 
-            serialize(child,list);
-        list.add(-1);
+            serialize(child,list); // recursive call 
+        list.add(-1); // post are
     }
 
     public static void main(String[] args) {
