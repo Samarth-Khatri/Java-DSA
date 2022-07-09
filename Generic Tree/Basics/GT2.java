@@ -49,8 +49,12 @@ public class Main {
         return stack.pop(); // Last Node in Stack is Root Node
     }
 
-    public static void serialize(Node root, ArrayList<Integer> data) {
-        // To convert tree into arraylist
+    // To convert tree into arraylist
+    public static void serialize(Node node, ArrayList<Integer> list) {
+        list.add(node.data);
+        for(Node child : node.children) 
+            serialize(child,list);
+        list.add(-1);
     }
 
     public static void main(String[] args) {
