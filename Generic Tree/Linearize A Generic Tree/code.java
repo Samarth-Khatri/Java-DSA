@@ -148,7 +148,8 @@ public class Main {
       node = node.children.get(0);
     return node;
   } 
-
+  
+  // O(N^2) Solution
   public static void linearize(Node node){
     
     for(Node child: node.children) // recursive call
