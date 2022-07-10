@@ -143,24 +143,43 @@ public class Main {
     }
   }
 
-  public static Node getTail(Node node) { // gives the end child
+  public static Node getTail(Node node) { // gives the end child as tail
     while(node.children.size()>0) 
       node = node.children.get(0);
     return node;
   } 
-  
-  // O(N^2) Solution
+
+  // O(N^2) -> Approach -> Using tail
   public static void linearize(Node node){
     
-    for(Node child: node.children) // recursive call
+    for(Node child: node.children) 
       linearize(child);
     
     while(node.children.size()>1) {
-      Node last = node.children.remove(node.children.size()-1); // detach last child
-      Node slast = node.children.get(node.children.size()-1); // get second last child
-      Node slastTail = getTail(slast); // get to the tail of second last child
-      slastTail.children.add(last); // attach tail of second last child to last child as it's child
+      Node last = node.children.remove(node.children.size()-1);
+      Node slast = node.children.get(node.children.size()-1);
+      Node slastTail = getTail(slast);
+      slastTail.children.add(last);
     }
+  }
+
+  // O(N) -> Approach -> returning tail in recursion only
+  public static Node linearizeEfficient(Node node){
+    if(node.children.size()==0) // base case
+      return node;
+
+    Node lastChild = node.children.get(node.children.size()-1); // get last child
+    Node lastTail = linearizeEfficient(lastChild); // linearize last child and return tail
+
+    while(node.children.size()>1) {
+      Node sLastChild = node.children.get(node.children.size()-2); // get second last child
+      Node sLastTail = linearizeEfficient(sLastChild); // linearize second last child and return tail
+      sLastTail.children.add(lastChild); // add last child as next child of second last tail
+      node.children.remove(node.children.size()-1); // remove attached last child
+      lastChild = sLastChild; // make last child the second last child and continue loop
+    }
+
+    return lastTail;
   }
 
   public static void main(String[] args) throws Exception {
@@ -173,7 +192,7 @@ public class Main {
     }
 
     Node root = construct(arr);
-    linearize(root);
+    linearizeEfficient(root);
     display(root);
   }
 
