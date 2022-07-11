@@ -66,11 +66,8 @@ public class Main {
     ArrayList<Integer> ad1 = nodeToRootPath(node,d1);
     ArrayList<Integer> ad2 = nodeToRootPath(node,d2);
     int ptr1 = ad1.size()-1, ptr2 = ad2.size()-1;
-    while(ptr1>=0 && ptr2>=0) {
-      if(ad1.get(ptr1)==ad2.get(ptr2)) {
+    while(ptr1>=0 && ptr2>=0 && ad1.get(ptr1)==ad2.get(ptr2)) {
         ptr1--; ptr2--;
-      } else
-        break;
     }
     return ad1.get(ptr1+1);
   }
