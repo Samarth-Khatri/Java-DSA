@@ -45,25 +45,47 @@ public class Main {
     return root;
   }
   //******************************MULTISOLVER*******************************
+  
+
+  // METHOD 1 
+  static int sum = 0;        
+  static int min = Integer.MAX_VALUE;
+  static int max = Integer.MIN_VALUE;
+  static int height = -1;
  
-  static int size;        //1
-  static int min;
-  static int max;
-  static int height;
+  public static void multisolver(Node node, int depth) { 
  
-  public static void multisolver(Node node, int depth) { //3
- 
-    size++;  //4
+    sum+=node.data;  
     min = Math.min(min, node.data);
     max = Math.max(max, node.data);
     height = Math.max(height, depth);
  
-    for (Node child : node.children) { //5
-      multisolver(child, depth + 1);
+    for (Node child : node.children) { 
+      multisolver(child,depth+1);
+    }
+  }
+
+
+  // METHOD 2
+  public static class HeapOver {
+    int sum = 0;        
+    int min = Integer.MAX_VALUE;
+    int max = Integer.MIN_VALUE;
+    int height = -1;
+  }
+    
+  public static void multisolver2(Node node, int depth, HeapOver mover) { 
+    mover.sum += node.data;  
+    mover.min = Math.min(mover.min, node.data);
+    mover.max = Math.max(mover.max, node.data);
+    mover.height = Math.max(mover.height, depth);
+ 
+    for (Node child : node.children) { 
+      multisolver(child,depth+1);
     }
   }
  
- 
+
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int n = Integer.parseInt(br.readLine());
@@ -74,18 +96,23 @@ public class Main {
     }
  
     Node root = construct(arr);
- 
-    size = 0;         //2
-    min = Integer.MAX_VALUE;
-    max = Integer.MIN_VALUE;
-    height = 0;
- 
-    multisolver(root, 0);
- 
-    System.out.println("Size=" + size);
-    System.out.println("Min=" + min);
-    System.out.println("Max=" + max);
-    System.out.println("Height=" + height);
+    
+
+    // METHOD 1
+    multisolver(root,0);
+    System.out.println("Sum = " + sum);
+    System.out.println("Min = " + min);
+    System.out.println("Max = " + max);
+    System.out.println("Height = " + height);
+
+
+    // METHOD 2 
+    HeapOver mover = new HeapOver();
+    multisolver2(root,0,mover);
+    System.out.println("Sum = " + mover.sum);
+    System.out.println("Min = " + mover.min);
+    System.out.println("Max = " + mover.max);
+    System.out.println("Height = " + mover.height);
   }
  
 }
