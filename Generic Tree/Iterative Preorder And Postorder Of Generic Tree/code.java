@@ -62,9 +62,9 @@ public class Main {
     Node root = construct(arr);
 
     // Logic ↓
-    // State = -1 -> Add in Preorder and ++
-    // State = 0 - child.size-1 ->  Child ++
-    // State = child.size -> Add in Postorder and ++
+    // State = -1 -> Add in Preorder and state++
+    // State = 0 - child.size-1 ->  Child state++
+    // State = child.size -> Add in Postorder and state++
     // State = child.size+1 -> Pop/Remove 
     String pre = "";
     String post = "";
