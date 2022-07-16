@@ -8,7 +8,7 @@ public class Main {
     Node right;
   }
 
-  static class Pair {
+  public static class Pair {
     Node node;
     int state;
   }
@@ -18,7 +18,7 @@ public class Main {
   // state = 2 -> right child push
   // state = 3 -> pop
   public static Node construct(Integer []arr) {
-    Stack<Node> st = new Stack<>(); // Stack for Nodes
+    Stack<Pair> st = new Stack<>(); // Stack for Nodes
     Node root = new Node();
     root.data = arr[0];
 
@@ -34,7 +34,7 @@ public class Main {
         // left child
         if(arr[idx]!=null) {
           Node lc = new Node(); // make a new node for left child
-          lc.data = arr[i]; // set left child data
+          lc.data = arr[idx]; // set left child data
           peekp.node.left = lc; // set left of peekp.node
 
           Pair leftp = new Pair(); // left child pair to push in stack
@@ -50,7 +50,7 @@ public class Main {
         // right child
         if(arr[idx]!=null) {
           Node rc = new Node(); // make a new node for right child
-          rc.data = arr[i]; // set right child data
+          rc.data = arr[idx]; // set right child data
           peekp.node.right = rc; // set right of peekp.node
 
           Pair rightp = new Pair(); // right child pair to push in stack
@@ -70,7 +70,15 @@ public class Main {
   }
 
   public static void display(Node node) {
-
+    if(node==null)
+      return;
+    String base = " <- " + node.data + " -> ";
+    String left = node.left==null ? "." : node.left.data+"";
+    String right = node.right==null ? "." : node.right.data+"";
+    System.out.println(left + base + right);
+    
+    display(node.left); // left child display now
+    display(node.right); // right child display now
   }
 
   public static void main(String[] args) {
