@@ -73,7 +73,7 @@ public class Main {
     Node root = construct(arr);
     
     mSum = Integer.MIN_VALUE;
-    mSumNode = 0;
+    mSumNode = Integer.MIN_VALUE;;
     int sum = nodeWithMaxSubtree(root);
     System.out.println(mSumNode + "@" + mSum);
   }
