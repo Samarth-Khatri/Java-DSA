@@ -80,8 +80,6 @@ public class Main {
   }
 
   public static void levelOrder(Node node) {
-    if(node==null)
-      return;
     LinkedList<Node> que = new LinkedList<>(); // Using linked list as queue
     LinkedList<Node> cque = new LinkedList<>();
     que.addLast(node);
