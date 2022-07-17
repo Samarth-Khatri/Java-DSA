@@ -96,7 +96,7 @@ public class Main {
   }
 
   public static int max(Node node) {
-    return (node==null) ? 0 : Math.max(Math.max(max(node.left),max(node.right)), node.data); 
+    return (node==null) ? Integer.MIN_VALUE : Math.max(Math.max(max(node.left),max(node.right)), node.data); 
     /////////////////////         OR
     if(node==null)
       return 0;
