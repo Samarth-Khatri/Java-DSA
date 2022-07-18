@@ -79,7 +79,8 @@ public class Main {
     display(node.right);
   }
 
-  public static void levelOrder(Node node) {
+  // Parent Queue - Child Queue Approach
+  public static void levelOrder1(Node node) {  
     LinkedList<Node> que = new LinkedList<>(); // Using linked list as queue
     LinkedList<Node> cque = new LinkedList<>();
     que.addLast(node);
@@ -101,6 +102,48 @@ public class Main {
     }
   }
 
+  // Using One Queue -> Count Approach
+  public static void levelOrder2(Node node) {  
+    LinkedList<Node> que = new LinkedList<>(); // Using linked list as queue
+    que.addLast(node);
+
+    while(que.size()>0) {
+      int currSize = que.size(); // taking current size and looping that times
+      while(currSize-->0) {
+        Node temp = que.removeFirst();
+        System.out.print(temp.data + " ");
+        if(temp.left!=null)
+          que.addLast(temp.left);
+        if(temp.right!=null)
+          que.addLast(temp.right);
+      }
+      System.out.println();
+    }
+  }
+
+ // Using One Queue -> Delimeter Approach
+  public static void levelOrder3(Node node) {  
+    LinkedList<Node> que = new LinkedList<>(); 
+    que.addLast(node);
+    Node delim = new Node(-1,null,null);
+    que.addLast(delim); // Added to identify where next line should start
+    
+    while(que.size()>0) {
+      Node temp = que.removeFirst();
+      if(temp.data==-1) { // If we encounter delim go to next line
+        System.out.println();
+        if(que.size()>0)
+          que.addLast(delim);
+        continue;
+      }
+      System.out.print(temp.data + " ");
+      if(temp.left!=null)
+        que.addLast(temp.left);
+      if(temp.right!=null)
+        que.addLast(temp.right);
+    }
+  }
+
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int n = Integer.parseInt(br.readLine());
@@ -115,7 +158,7 @@ public class Main {
     }
 
     Node root = construct(arr);
-    levelOrder(root);
+    levelOrder3(root);
   }
 
 }
