@@ -93,8 +93,8 @@ public class Main {
     if(node==null)
       return new ArrayList<>();
 
-    ArrayList<Integer> list = new ArrayList<>();  
     if(node.data==data) {
+      ArrayList<Integer> list = new ArrayList<>();  
       list.add(node.data);
       return list;
     }
@@ -111,7 +111,7 @@ public class Main {
       return rlist;
     }
 
-    return list;
+    return new ArrayList<>();
   }
 
   public static void main(String[] args) throws Exception {
