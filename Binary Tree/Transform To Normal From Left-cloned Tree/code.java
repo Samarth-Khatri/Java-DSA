@@ -84,8 +84,8 @@ public class Main {
       return null;
     Node left = transBackFromLeftClonedTree(node.left.left);
     Node right = transBackFromLeftClonedTree(node.right);
-    Node newNode = new Node(node.data,left,right);
-    return newNode;
+    node.left = left;
+    return node;
   }
 
   public static void main(String[] args) throws Exception {
