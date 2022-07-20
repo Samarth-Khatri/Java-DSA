@@ -91,6 +91,7 @@ public class Main {
     return th;
   }
 
+  // Method-1 -> Travel and tweak
   static int treeTilt = 0;
   public static int tilt(Node node){
     if(node==null) return 0;
@@ -100,6 +101,30 @@ public class Main {
     int nodeTilt = Math.abs(ls-rs);
     treeTilt += nodeTilt;
     return ts;
+  }
+
+  // Method-2 -> Defining a pair
+  static class Tpair {
+    int sum = 0;
+    int tiltsum = 0;
+  }
+
+  public static Tpair tilt2(Node node) {
+    if(node==null) {
+      Tpair bp = new Tpair();
+      bp.sum = 0;
+      bp.tiltsum = 0;
+      return bp;
+    }
+
+    Tpair lp = tilt2(node.left);
+    Tpair rp = tilt2(node.right);
+
+    Tpair mp = new Tpair();
+    mp.sum = lp.sum + rp.sum + node.data;
+    mp.tiltsum = lp.tiltsum + rp.tiltsum + Math.abs(lp.sum-rp.sum);
+
+    return mp;
   }
 
   public static void main(String[] args) throws Exception {
@@ -119,6 +144,10 @@ public class Main {
 
     tilt(root);
     System.out.println(treeTilt);
+
+    Tpair ansp = new Tpair();
+    ansp = tilt2(root);
+    System.out.println(ansp.tiltsum);
   }
 
 }
