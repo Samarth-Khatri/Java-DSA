@@ -126,7 +126,7 @@ public class Main {
     return ht;
   }
 
-  // Approach 3 -> Bad Approach -> O(N^2)
+  // Approach 3 -> Bad Approach -> O(N^2) -> Two Eulers
   public static int diameter3(Node node) {
     if(node==null)
       return 0;
@@ -142,6 +142,28 @@ public class Main {
     return dia;
   }
 
+  // Approach 4 -> Height and Diameter as Pair -> O(N)
+  static class DiaPair{
+    int dia;
+    int ht;
+  }
+
+  public static DiaPair diameter4(Node node) {
+    if(node==null) {
+      DiaPair bp = new DiaPair(); // base pair
+      bp.dia = 0;
+      bp.ht = -1;
+      return bp;
+    }
+
+    DiaPair lp = diameter4(node.left); // left pair
+    DiaPair rp = diameter4(node.right); // right pair
+
+    DiaPair mp = new DiaPair(); // max pair
+    mp.ht = Math.max(lp.ht,rp.ht)+1;
+    mp.dia = Math.max(lp.ht+rp.ht+2, Math.max(lp.dia,rp.dia));
+    return mp;
+  }
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int n = Integer.parseInt(br.readLine());
@@ -157,16 +179,19 @@ public class Main {
 
     Node root = construct(arr);
 
-    // int height = 0;
-    // height = diameter1(root);
-    // System.out.println(dm.dia);
+    int height = 0;
+    height = diameter1(root);
+    System.out.println(dm.dia);
 
-    // DiaMover dm = new DiaMover();
-    // diameter2(root,dm);
-    // System.out.println(dm.dia);
+    DiaMover dm = new DiaMover();
+    diameter2(root,dm);
+    System.out.println(dm.dia);
   
     int dia = diameter3(root);
     System.out.println(dia);
+
+    DiaPair dp = diameter4(root);
+    System.out.println(dp.dia);
   }
 
 }
