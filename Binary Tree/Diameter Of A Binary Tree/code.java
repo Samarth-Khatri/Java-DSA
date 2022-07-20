@@ -91,7 +91,7 @@ public class Main {
     return th;
   }
 
-  // Approach 1 -> Travel and tweak 
+  // Approach 1 -> Travel and tweak -> O(N)
   static int dia = 0;
   public static int diameter1(Node node) {
     if(node==null)
@@ -107,7 +107,7 @@ public class Main {
     return ht;
   }
 
-  // Approach 2 -> Heapmover
+  // Approach 2 -> Heapmover -> O(N)
   static class DiaMover {
     int dia = 0;
   }
@@ -124,6 +124,22 @@ public class Main {
       dm.dia = lh+rh+2;
     
     return ht;
+  }
+
+  // Approach 3 -> Bad Approach -> O(N^2)
+  public static int diameter3(Node node) {
+    if(node==null)
+      return 0;
+    
+    int lh = height(node.left);
+    int rh = height(node.right);
+    int rdist = lh + rh + 2;
+
+    int ld = diameter3(node.left);
+    int rd = diameter3(node.right);
+
+    int dia = Math.max(rdist, Math.max(ld,rd));
+    return dia;
   }
 
   public static void main(String[] args) throws Exception {
@@ -145,9 +161,12 @@ public class Main {
     // height = diameter1(root);
     // System.out.println(dm.dia);
 
-    DiaMover dm = new DiaMover();
-    diameter2(root,dm);
-    System.out.println(dm.dia);
+    // DiaMover dm = new DiaMover();
+    // diameter2(root,dm);
+    // System.out.println(dm.dia);
+  
+    int dia = diameter3(root);
+    System.out.println(dia);
   }
 
 }
