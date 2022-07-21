@@ -78,7 +78,8 @@ public class Main {
     display(node.left);
     display(node.right);
   }
-  
+
+  // Method 1 -> Travel and Tweak -> Using global variable
   static boolean isTreeBal = true;
   public static int balance(Node node) {
     if(node==null)
@@ -88,6 +89,30 @@ public class Main {
     if(!(Math.abs(lh-rh)<=1))
       isTreeBal = false;
     return Math.max(lh,rh)+1;
+  }
+
+  // Method 2 -> Pair method
+  static class BalPair{
+    int height = -1;
+    boolean isBal = true;
+  }
+
+  public static BalPair balance2(Node node) {
+    if(node==null) {
+      BalPair bp = new BalPair();
+      bp.height = -1;
+      bp.isBal = true;
+      return bp;
+    }
+
+    BalPair lp = balance2(node.left);
+    BalPair rp = balance2(node.right);
+
+    BalPair mp = new BalPair();
+    mp.height = Math.max(lp.height, rp.height) + 1;
+    mp.isBal = lp.isBal && rp.isBal && (Math.abs(lp.height - rp.height) <= 1);
+    
+    return mp;
   }
 
   public static void main(String[] args) throws Exception {
@@ -107,6 +132,9 @@ public class Main {
     
     balance(root);
     System.out.println(isTreeBal);
+
+    BalPair ansp = balance2(root);
+    System.out.println(ansp.isBal);
   }
 
 }
