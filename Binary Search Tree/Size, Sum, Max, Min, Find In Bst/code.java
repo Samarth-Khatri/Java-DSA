@@ -88,14 +88,10 @@ public class Main {
   }
 
   public static int max(Node node) {
-    if(node == null)
-      return Integer.MIN_VALUE;
     return (node.left == null && node.right == null) ? node.data : max(node.right);
   }
 
   public static int min(Node node) {
-    if(node == null)
-      return Integer.MAX_VALUE;
     return (node.left == null && node.right == null) ? node.data : min(node.left);
   }
 
