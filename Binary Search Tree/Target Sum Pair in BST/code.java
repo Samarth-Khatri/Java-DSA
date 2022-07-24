@@ -87,6 +87,9 @@ public class Main {
     return (data>node.data) ? find(node.right,data) : find(node.left,data);
   }  
 
+
+  // Approach 1 = Inorder Traversal
+  // Tc -> O(hN) => Sc -> O(h)    h = height of tree
   public static void sumPair(Node root, Node node, int data) {
     if(node == null) return;
 
@@ -99,6 +102,94 @@ public class Main {
 
     sumPair(root,node.right,data);
   }
+
+
+  // Approach 2 = ArrayList Approach
+  // Tc -> O(N) => Sc -> O(N)
+  public static void tnf(Node node, ArrayList< Integer> list) {
+    if (node == null)
+      return;
+
+    tnf(node.left, list);
+    list.add(node.data);
+    tnf(node.right, list);
+  }
+
+
+  // Approach 3 -> taking one from start using normal inorder and one from end using reverse inorder
+  // Tc -> O(N) => Sc -> O(h)    h = height of tree
+  public static class ITPair {
+    Node node;
+    int state = 0;
+
+    ITPair() {};
+
+    ITPair(Node node, int state) {
+      this.node = node;
+      this.state = state;
+    }
+  }
+
+  public static void bestApproach(Node node, int tar) {
+    Stack< ITPair> ls = new Stack< >();
+    Stack< ITPair> rs = new Stack< >();
+
+    ls.push(new ITPair(node, 0));
+    rs.push(new ITPair(node, 0));
+
+    Node left = getNextFromNormalInorder(ls);
+    Node right = getNextFromReverseInorder(rs);
+    while (left.data < right.data) { // just like array
+      if(left.data + right.data < tar)
+        left = getNextFromNormalInorder(ls);
+      else if (left.data + right.data > tar)
+        right = getNextFromReverseInorder(rs);
+      else {
+        System.out.println(left.data + " " + right.data);
+        left = getNextFromNormalInorder(ls);
+        right = getNextFromReverseInorder(rs);
+      }
+    }
+  }
+
+  public static Node getNextFromNormalInorder(Stack< ITPair> st) {
+    while (st.size() > 0) {
+      ITPair top = st.peek();
+      if (top.state == 0) {
+        if (top.node.left != null)
+          st.push(new ITPair(top.node.left, 0));
+        top.state++;
+      }
+      else if (top.state == 1) {
+        if (top.node.right != null)
+          st.push(new ITPair(top.node.right, 0));
+        top.state++;
+        return top.node;
+      }
+      else st.pop();
+    }
+    return null;
+  }
+
+  public static Node getNextFromReverseInorder(Stack< ITPair> st) {
+    while (st.size() > 0) {
+      ITPair top = st.peek();
+      if (top.state == 0) {
+        if (top.node.right != null)
+          st.push(new ITPair(top.node.right, 0));
+        top.state++;
+      }
+      else if (top.state == 1) {
+        if (top.node.left != null)
+          st.push(new ITPair(top.node.left, 0));
+        top.state++;
+        return top.node;
+      }
+      else st.pop();
+    }
+    return null;
+  }
+
 
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -117,7 +208,31 @@ public class Main {
 
     Node root = construct(arr);
     
+    // 1 ->
     sumPair(root,root,data);
-  }
 
+
+    // 2 ->
+    ArrayList< Integer> list = new ArrayList< >();
+    tnf(root, list);
+    int li = 0;
+    int ri = list.size() - 1;
+    while (li < ri) {
+      int left = list.get(li);
+      int right = list.get(ri);
+      if (left + right > data)
+        ri--;
+      else if (left + right < data)
+        li++;
+      else {
+        System.out.println(left + " " + right);
+        li++;
+        ri--;
+      }
+    }
+
+
+    // 3 ->
+    bestApproach(root, data);
+  }
 }
