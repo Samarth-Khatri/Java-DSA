@@ -1,89 +1,103 @@
-import java.io.*;
 import java.util.*;
+import java.io.*;
 
-public class Main {
-  public static class Node {
-    int data;
-    Node left;
+public class Main{
+
+  public static class Node{
+    int data; 
+    Node left; 
     Node right;
+      
   }
 
-  public static class Pair {
-    Node node;
+  public static void display(Node node){
+    if(node == null){
+      return;
+    }
+
+    String str = " <- " + node.data + " -> ";
+    String lcstr = node.left == null? ".": node.left.data + ""; 
+    String rcstr = node.right == null? ".": node.right.data + ""; 
+    System.out.println(lcstr + str + rcstr);
+
+    display(node.left);
+    display(node.right);
+  }
+
+  public static class Pair{
+    Node node; 
     int state;
   }
 
-  // Logic 
-  // state = 1 -> left child push
-  // state = 2 -> right child push
-  // state = 3 -> pop
-  public static Node construct(Integer []arr) {
-    Stack<Pair> st = new Stack<>(); // Stack for Nodes
-    Node root = new Node();
-    root.data = arr[0];
+  public static Node constructor(Integer[] arr){
+    Stack<Pair> st = new Stack<>();
+    Node root = new Node(); 
 
-    Pair rootp = new Pair();
+    root.data = arr[0];
+    Pair rootp = new Pair(); 
     rootp.node = root;
     rootp.state = 1;
 
-    st.push(rootp);
-    int idx = 1;
-    while(!st.isEmpty()) {
-      Pair peekp = new Pair();
-      if(peekp.state==1) {
-        // left child
-        if(arr[idx]!=null) {
-          Node lc = new Node(); // make a new node for left child
-          lc.data = arr[idx]; // set left child data
-          peekp.node.left = lc; // set left of peekp.node
+    st.push(rootp); 
+    int idx = 1; 
 
-          Pair leftp = new Pair(); // left child pair to push in stack
-          leftp.node = lc;
-          leftp.state = 1;
+    while(st.size() > 0 && idx < arr.length){
+      Pair peekp = st.peek(); 
+      
+      if(rootp.state == 1){
+        if(arr[idx] != null){
+          Node lc = new Node();
+          lc.data = arr[idx]; 
+          peekp.node.left = lc;
 
-          st.push(leftp); // push pair in stack
+          Pair lp = new Pair(); 
+          lp.node = lc; 
+          lp.state = 1;
+
+          st.push(lp); 
         }
-        peekp.state++; // increase state
-        idx++; // increase index
+
+        peekp.state++; 
+        idx++; 
       }
-      else if(peekp.state==2) {
-        // right child
-        if(arr[idx]!=null) {
-          Node rc = new Node(); // make a new node for right child
-          rc.data = arr[idx]; // set right child data
-          peekp.node.right = rc; // set right of peekp.node
+      else if(rootp.state == 2){
+        if(arr[idx] != null){
+          Node rc = new Node();
+          rc.data = arr[idx]; 
+          peekp.node.right = rc; 
 
-          Pair rightp = new Pair(); // right child pair to push in stack
-          rightp.node = rc;
-          rightp.state = 1;
+          Pair rp = new Pair(); 
+          rp.node = rc; 
+          rp.state = 1;
 
-          st.push(rightp); // push pair in stack
+          st.push(rp);
         }
-        peekp.state++; // increase state
-        idx++; // increase index
+        
+        peekp.state++; 
+        idx++;
       }
-      else if(peekp.state==3)
-        // pop out
+      else if(rootp.state == 3){
         st.pop();
+      }
     }
-    return root;
-  }
 
-  public static void display(Node node) {
-    if(node==null)
-      return;
-    String base = " <- " + node.data + " -> ";
-    String left = node.left==null ? "." : node.left.data+"";
-    String right = node.right==null ? "." : node.right.data+"";
-    System.out.println(left + base + right);
-    
-    display(node.left); // left child display now
-    display(node.right); // right child display now
-  }
+    return root; 
 
-  public static void main(String[] args) {
-    Integer []arr = new Integer[] {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
-    Node root = construct(arr);
+  }
+  public static void main(String[] args) throws Exception{
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int n = Integer.parseInt(br.readLine());
+    Integer[] arr = new Integer[n];
+    String[] values = br.readLine().split(" ");
+    for (int i = 0; i < n; i++) {
+      if (values[i].equals("n") == false) {
+        arr[i] = Integer.parseInt(values[i]);
+      } else {
+        arr[i] = null;
+      }
+    }
+
+    Node root = constructor(arr);
     display(root);
   }
 }
