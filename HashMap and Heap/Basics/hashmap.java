@@ -40,5 +40,9 @@ public class Main {
       System.out.print(key + " -> ");
       System.out.println(pmap.get(key));
     } 
+
+    // Remove
+    pmap.remove("China");
+    System.out.println(pmap);
   }
 }
