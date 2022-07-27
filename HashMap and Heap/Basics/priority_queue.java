@@ -27,6 +27,7 @@ public class Main {
 
     System.out.println(pq.remove()); // 50 -> 50
 
+    // HEAP SORT
     // We can use it for sorting in NlogN Tc
     PriorityQueue<Integer> spq = new PriorityQueue<>();
     int []arr = {2,45,62,32,11,78,99,126,42,86,91,999};
