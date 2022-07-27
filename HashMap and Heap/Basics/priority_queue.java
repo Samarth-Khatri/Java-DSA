@@ -36,5 +36,16 @@ public class Main {
 
     while(spq.size()>0)
         System.out.print(spq.remove() + " "); // logN
+
+    
+    // If we want to give priority to bigger number than   
+    PriorityQueue<Integer> spq = new PriorityQueue<>(Collections.reverseOrder()); // Reverse sorting
+    int []arr = {2,45,62,32,11,78,99,126,42,86,91,999};
+    
+    for(int val : arr) // N
+        spq.add(val); // logN
+
+    while(spq.size()>0)
+        System.out.print(spq.remove() + " "); // logN
   }
 }
