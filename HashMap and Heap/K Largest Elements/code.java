@@ -30,7 +30,7 @@ import java.util.*;
             i++;
         }
 
-        // Approch 2 -> Tc = O(klogk) + O(n-klogk), Sc = O(k) = Better
+        // Approch 2 -> Tc = O(klogk) + O(n-klogk) + O(klogk), Sc = O(k) = Better
         PriorityQueue<Integer> pq = new PriorityQueue<>();
 		for(int i=0;i<k;++i)
 			pq.add(arr[i]);
