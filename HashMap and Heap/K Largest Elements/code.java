@@ -29,5 +29,26 @@ import java.util.*;
             System.out.print(pq.remove() + " ");
             i++;
         }
+
+        // Approch 2 -> Tc = O(klogk) + O(n-klogk), Sc = O(k) = Better
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+		for(int i=0;i<k;++i)
+			pq.add(arr[i]);
+
+		for(int i=k;i<n;++i)
+			if(arr[i] > pq.peek()) {
+				pq.remove();
+				pq.add(arr[i]);
+			}
+
+		int []ans = new int[k];
+		int i=0;
+		while(pq.size()>0) {
+            ans[i] = pq.remove();
+			i++;
+		}
+
+		for(int j=ans.length-1;j>=0;--j)
+			System.out.print(ans[j] + " ");
     }
  }
