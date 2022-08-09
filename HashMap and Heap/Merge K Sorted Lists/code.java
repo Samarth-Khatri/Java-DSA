@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Main {
 
-   static class Pair implements Comparable {
+   static class Pair implements Comparable<Pair> {
       int data;
       int li; // list index
       int di; // data index
@@ -11,9 +11,8 @@ public class Main {
       // +ve -> this is bigger
       // -ve -> this is smaller
       // 0 -> this and other are equal
-      public int compareTo(Object o) {
-         Pair other = (Pair)o;
-         return this.data - other.data;
+      public int compareTo(Pair o) {
+         return this.data - o.data;
       }
    }
 
