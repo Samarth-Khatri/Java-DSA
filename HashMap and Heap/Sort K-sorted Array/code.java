@@ -21,7 +21,7 @@ public class Main {
       for(int i=0;i<n;++i)
          System.out.println(pq.remove());
 
-      // Better Approach = Tc -> O(Nlogk), Sc -> O(k)
+      // Better Approach = Tc -> O((N+k)logk), Sc -> O(k)
       PriorityQueue<Integer> pq = new PriorityQueue<>();
       int i=0;
       for(;i<k+1;++i)
