@@ -6,6 +6,7 @@ public class Main {
   public static class PriorityQueue {
     ArrayList<Integer> data;
 
+    // Time Complexity -> O(N)
     public PriorityQueue(int []arr) { // input array
       data = new ArrayList<>();
       for(int i:arr) // add array elements to data list
