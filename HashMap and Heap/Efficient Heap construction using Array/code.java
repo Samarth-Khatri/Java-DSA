@@ -6,8 +6,13 @@ public class Main {
   public static class PriorityQueue {
     ArrayList<Integer> data;
 
-    public myPriorityQueue() {
+    public PriorityQueue(int []arr) { // input array
       data = new ArrayList<>();
+      for(int i:arr) // add array elements to data list
+        data.add(i);
+      
+      for(int i=data.size()/2-1;i>=0;--i) // call down heapify (more elements do less work)
+        downheapify(i);
     }
 
     public void add(int val) {
@@ -74,6 +79,9 @@ public class Main {
   }
 
   public static void main(String[] args) throws Exception {
-    
+    int []arr = {5,53,30,76,45,1,98,69};
+    PriorityQueue pq = new PriorityQueue(arr);
+    while(pq.size()>0)
+      System.out.println(pq.remove() + " ");
   }
 }
