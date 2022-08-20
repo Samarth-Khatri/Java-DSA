@@ -48,5 +48,6 @@ public class Main {
 
     while(spq.size()>0)
         System.out.print(spq.remove() + " "); // logN
+        
   }
 }
