@@ -26,7 +26,7 @@ public class Main {
     public void upheapify(int i) {
       if(i == 0)
         return;
-      int pi = i/2 - 1;
+      int pi = (i-1)/2;
       if(isSmaller(i,pi)) {
         swap(pi,i);
         upheapify(pi);
