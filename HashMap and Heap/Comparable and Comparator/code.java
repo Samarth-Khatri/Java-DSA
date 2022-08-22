@@ -96,6 +96,18 @@ public class Main {
     }
   }
 
+  static class StudentWeightComparator implements Comparator<Student> {
+    public int compare(Student s1, Student s2) {
+      return s1.wt - s2.wt;
+    }
+  }
+
+  static class StudentMarksComparator implements Comparator<Student> {
+    public int compare(Student s1, Student s2) {
+      return s1.marks - s2.marks;
+    }
+  }
+
   public static void main(String[] args) throws Exception {
     // Student s1 = new Student("Sam",170,78);
     // System.out.println(s1);
@@ -108,22 +120,25 @@ public class Main {
     students[4] = new Student("E",165,55,28);
 
     PriorityQueue<Student> pqHt = new PriorityQueue<>();
-    PriorityQueue<Student> pqWt = new PriorityQueue<>();
-    PriorityQueue<Student> pqMarks = new PriorityQueue<>();
+    PriorityQueue<Student> pqWt = new PriorityQueue<>(new StudentWeightComparator());
+    PriorityQueue<Student> pqMarks = new PriorityQueue<>(new StudentMarksComparator());
     
-    for(Student student : students)
+    for(Student student : students) {
       pqHt.add(student);
       pqWt.add(student);
       pqMarks.add(student);
+    }
 
     System.out.println("On The Basis of Height");
     while(pqHt.size()>0)
       System.out.println(pqHt.remove());
 
+    System.out.println();
     System.out.println("On The Basis of Weight");
     while(pqWt.size()>0)
       System.out.println(pqWt.remove());
 
+    System.out.println();
     System.out.println("On The Basis of Marks");
     while(pqMarks.size()>0)
       System.out.println(pqMarks.remove());
