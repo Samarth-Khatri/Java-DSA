@@ -34,9 +34,25 @@ public class Main {
       }
 
       ArrayList<ArrayList<Integer>> comps = new ArrayList<>();
-      
-      // write your code here
-
+      boolean []visited = new boolean[vtces];
+      for(int i=0;i<graph.length;++i) {
+         if(!visited[i]) {
+            ArrayList<Integer> comp = new ArrayList<>();
+            fillComp(graph, visited, comp, i);
+            comps.add(comp);
+         }
+      } 
       System.out.println(comps);
+   }
+
+   public static void fillComp(ArrayList<Edge> []graph, boolean []visited, ArrayList<Integer> comp, int src) {
+      visited[src] = true;
+      comp.add(src);
+      for(int i=0;i<graph[src].size();++i) {
+         Edge e = graph[src].get(i);
+         int nbr = e.nbr;
+         if(!visited[nbr])
+            fillComp(graph, visited, comp, nbr);
+      }
    }
 }
