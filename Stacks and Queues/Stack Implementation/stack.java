@@ -1,4 +1,4 @@
-public static class stack {
+public class stack {
 
     // class variables
     private int[] arr;
