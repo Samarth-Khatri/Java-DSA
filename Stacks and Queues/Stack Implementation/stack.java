@@ -15,7 +15,7 @@ public class stack {
         this.initialize(size); // user defined size
     }
 
-    private void initilize(int size) {
+    protected void initilize(int size) {
         this.arr = new int[size];
         this.sizeOfArray = size;
         this.sizeOfStack = 0;
