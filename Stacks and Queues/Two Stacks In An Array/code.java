@@ -81,8 +81,8 @@ public class Main {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int n = Integer.parseInt(br.readLine());
     TwoStack st = new TwoStack(n);
-
     String str = br.readLine();
+    
     while (str.equals("quit") == false) {
       if (str.startsWith("push1")) {
         int val = Integer.parseInt(str.split(" ")[1]);
