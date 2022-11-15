@@ -61,4 +61,30 @@ public class Main {
     if (ans != -1) return ans;
     return arr[idx] == data ? idx : -1;
   }
+
+  public static int subseq(String str, int idx, String ans) { // From 0 -> N
+    if (idx == str.length()) {
+      System.out.println(ans);
+      return 1;
+    }
+
+    int count = 0;
+    count += subseq(str, idx + 1, ans); // not take
+    count += subseq(str, idx + 1, ans + str.charAt(idx)); // take
+
+    return count;
+  }
+
+  public static int subseq2(String str, int n, String ans) { // From N -> 0 (Used more in DP)
+    if (n == 0) {
+      System.out.println(ans);
+      return 1;
+    }
+
+    int count = 0;
+    count += subseq2(str, n - 1, ans); // not take
+    count += subseq2(str, n - 1, ans + str.charAt(n - 1)); // take
+
+    return count;
+  }
 }
