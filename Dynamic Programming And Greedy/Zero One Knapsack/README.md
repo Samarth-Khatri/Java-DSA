@@ -8,13 +8,13 @@
 
 Note -> Each item can be taken 0 or 1 number of times. You are not allowed to put the same item again and again.
 
-### Input Format
+## Input Format
 A number n  
 v1 v2 .. n number of elements   
 w1 w2 .. n number of elements   
 A number cap
 
-### Output Format
+## Output Format
 A number representing the maximum value that can be created in the bag without overflowing it's capacity
 
 ## Constraints
@@ -23,11 +23,11 @@ A number representing the maximum value that can be created in the bag without o
 0 < w1, w2, .. n elements <= 10     
 0 < cap <= 10
 
-### Sample Input
+## Sample Input
 5   
 15 14 10 45 30  
 2 5 1 3 4   
 7
 
-### Sample Output
+## Sample Output
 75
